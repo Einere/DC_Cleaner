@@ -64,12 +64,13 @@ npm run start
 
 ## chrome driver version error
 
+`./package.json`
+
 ```json
-// ./package.json
+
 {
   "dependencies": {
-    "chromedriver": "^87.0.0", 
-    ...  
+    "chromedriver": "^87.0.0",   
   }
 }
 ```
