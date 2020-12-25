@@ -1,19 +1,21 @@
 # DC Cleaner
 
-light DC Cleaner using Node.js  
-Node.js 기반 초경량 DC 클리너입니다.
+light DC Cleaner using Node.js.  
+Node.js 기반 초경량 DC 클리너입니다.  
 
 # Requirement
 
 [Node.js](https://nodejs.org/ko/download/)
 
-운영체제 맞게 Node.js 및 npm을 설치합니다.
+install Node.js and npm appropriately with your OS.  
+운영체제 맞게 Node.js 및 npm을 설치합니다.  
 
 # Install
 
 ### Clone project  
 
-프로젝트를 클론합니다.
+clone the project.  
+프로젝트를 클론합니다.  
 
 ```bash
 $ git clone https://github.com/Einere/DC_Cleaner.git
@@ -21,7 +23,8 @@ $ git clone https://github.com/Einere/DC_Cleaner.git
 
 ### Install package
 
-의존성 패키지를 설치합니다. 
+install dependency pakages.  
+의존성 패키지를 설치합니다.  
 
 ```bash
 $ npm install
@@ -29,8 +32,10 @@ $ npm install
 
 ### Make configuration
 
+make `config.js` like below.  
+`config.js` 파일을 다음과 같이 생성합니다.
+
 ```javascript
-// ./config.js
 const config = {
   id: 'your_id',
   pw: 'your_password',
@@ -40,6 +45,8 @@ const config = {
 
 module.exports = user;
 ```
+see `config` object specification.  
+`config` 객체의 필드 및 값은 다음 표를 참고해주세요.
 
 | filed    	| value type 	| require 	| description            	|
 |----------	|------------	|---------	|------------------------	|
@@ -70,7 +77,7 @@ npm run start
 
 {
   "dependencies": {
-    "chromedriver": "^87.0.0",   
+    "chromedriver": "^87.0.0"
   }
 }
 ```
