@@ -3,15 +3,15 @@
 light DC Cleaner using Node.js  
 Node.js 기반 초경량 DC 클리너입니다.
 
-# require
+# Requirement
 
 [Node.js](https://nodejs.org/ko/download/)
 
 운영체제 맞게 Node.js 및 npm을 설치합니다.
 
-# install
+# Install
 
-## clone project  
+## Clone project  
 
 프로젝트를 클론합니다.
 
@@ -19,7 +19,7 @@ Node.js 기반 초경량 DC 클리너입니다.
 $ git clone https://github.com/Einere/DC_Cleaner.git
 ```
 
-##  install package
+## Install package
 
 의존성 패키지를 설치합니다. 
 
@@ -27,7 +27,7 @@ $ git clone https://github.com/Einere/DC_Cleaner.git
 $ npm install
 ```
 
-##  make configuration
+## Make configuration
 
 ```javascript
 // ./config.js
@@ -50,19 +50,19 @@ module.exports = user;
 
 
 
-# run
+# Run
 
 ```bash
 npm run start
 ```
 
-# error handling
+# Error handling
 
 ## DC prevent deleting by capcha
 
 만약 로봇이 아닌가요? 때문에 삭제가 안된다면, 크롬 창을 끄고 10분 정도 뒤에 다시 실행헤주세요.
 
-## chrome driver version error
+## Chrome driver version error
 
 `./package.json`
 
