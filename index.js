@@ -8,11 +8,11 @@ const baseUrl = "https://gallog.dcinside.com";
 
 chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
 
-async function login({id, pw}) {
+async function login({baseUrl, id, pw}) {
   let driver = await new Builder().forBrowser("chrome").build();
 
   // login
-  await driver.get(`https://gallog.dcinside.com/${id}`);
+  await driver.get(`${baseUrl}/${id}`);
   await driver.findElement(By.className("btn_top_loginout")).click();
   await driver.findElement(By.id("id")).sendKeys(id);
   await driver.findElement(By.id("pw")).sendKeys(pw);
@@ -26,7 +26,7 @@ async function login({id, pw}) {
 async function clean(config) {
   const {id, pw, category = 'post', interval = 500} = config;
 
-  const {driver} = await login({id, pw});
+  const {driver} = await login({baseUrl, d, pw});
   let isContinue = true;
 
   // go to category
