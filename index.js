@@ -1,67 +1,68 @@
-const { Builder, By } = require("selenium-webdriver");
+const {Builder, By} = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 const chromeDriver = require("chromedriver");
-const user = require("./user.js");
+const config = require("./config.js");
 const baseUrl = "https://gallog.dcinside.com";
+
+
 
 chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
 
-async function login() {
-    let driver = await new Builder().forBrowser("chrome").build();
+async function login({id, pw}) {
+  let driver = await new Builder().forBrowser("chrome").build();
 
-    // login
-    await driver.get(`https://gallog.dcinside.com/${user.id}`);
-    await driver.findElement(By.className("btn_top_loginout")).click();
-    await driver.findElement(By.id("id")).sendKeys(user.id);
-    await driver.findElement(By.id("pw")).sendKeys(user.pw);
-    await driver.findElement(By.className("btn_wfull")).click();
+  // login
+  await driver.get(`https://gallog.dcinside.com/${id}`);
+  await driver.findElement(By.className("btn_top_loginout")).click();
+  await driver.findElement(By.id("id")).sendKeys(id);
+  await driver.findElement(By.id("pw")).sendKeys(pw);
+  await driver.findElement(By.className("btn_wfull")).click();
 
-    return {
-        driver
-    };
+  return {
+    driver
+  };
 }
 
-async function clean({ category }) {
-    const {
-        driver
-    } = await login();
-    let isContinue = true;
+async function clean(config) {
+  const {id, pw, category = 'post', interval = 500} = config;
 
-    // go to category
-    driver.get(`${baseUrl}/${user.id}/${category}`);
+  const {driver} = await login({id, pw});
+  let isContinue = true;
 
-    while (isContinue) {
-        try {
-            // delete
-            await driver.findElement(By.className("btn_delete")).click();
-            await driver.sleep(500);
+  // go to category
+  driver.get(`${baseUrl}/${id}/${category}`);
 
-            // confirm
-            const alert = await driver.switchTo().alert();
-            await alert.accept();
+  while (isContinue) {
+    try {
+      // delete
+      await driver.findElement(By.className("btn_delete")).click();
+      await driver.sleep(interval);
 
-            await driver.sleep(500);
-            // await driver.navigate().refresh();
-        } catch (e) {
-            if (e.name === "NoSuchElementError") {
-                isContinue = false;
-                await driver.quit();
-            }
-            if (e.name === "NoSuchAlertError") {
-                await driver.sleep(500);
-            }
-            await driver.sleep(500);
+      // confirm
+      const alert = await driver.switchTo().alert();
+      await alert.accept();
+
+      await driver.sleep(interval);
+    } catch (e) {
+      switch (e.name) {
+        case 'NoSuchElementError': {
+          isContinue = false;
+          await driver.quit();
+          break;
         }
+        case 'NoSuchAlertError': {
+          await driver.sleep(interval);
+          break;
+        }
+        default: {
+          await driver.quit();
+        }
+      }
+      await driver.sleep(interval);
     }
+  }
 }
 
-async function cleanComment() {
-
-}
-
-clean({
-    category: "posting"
-    // category: 'comment'
-});
+clean(config);
 
 
