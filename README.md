@@ -2,6 +2,7 @@
 
 light DC Cleaner using Node.js.  
 Node.js 기반 초경량 DC 클리너입니다.  
+최대한 비개발자도 따라할 수 있게 작성했습니다만, 실제로 그럴지는 잘 모르겠네요.    
 
 # Requirement
 
@@ -21,6 +22,11 @@ clone the project.
 $ git clone https://github.com/Einere/DC_Cleaner.git
 ```
 
+그리고 해당 폴더로 이동합니다.
+```bash
+$ cd DC_cleaner
+```
+
 ### Install package
 
 install dependency pakages.  
@@ -32,8 +38,8 @@ $ npm install
 
 ### Make configuration
 
-make `config.js` like below.  
-`config.js` 파일을 다음과 같이 생성합니다.
+make `config.js` like below in current directory.  
+`config.js` 파일을 현재 폴더 내에 다음과 같이 생성합니다.
 
 ```javascript
 const config = {
@@ -60,8 +66,9 @@ see `config` object specification.
 # Run
 
 ```bash
-npm run start
+$ npm run start
 ```
+
 
 # Error handling
 
