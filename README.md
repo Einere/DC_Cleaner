@@ -9,7 +9,15 @@ Node.js 기반 초경량 DC 클리너입니다.
 [Node.js](https://nodejs.org/ko/download/)
 
 install Node.js and npm appropriately with your OS.  
-운영체제 맞게 Node.js 및 npm을 설치합니다.  
+운영체제 맞게 Node.js 및 npm을 설치합니다. (Node.js 설치 시, npm은 자동으로 같이 설치됩니다.)  
+
+다음 명령어를 실행하여 버전이 제대로 출력되는지 확인하는 것으로, 설치가 되었는지 확인할 수 있습니다.
+```bash
+$ node --version
+```
+```bash
+$ npm --version
+```
 
 # Install
 
