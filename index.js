@@ -4,8 +4,6 @@ const chromeDriver = require("chromedriver");
 const config = require("./config.js");
 const baseUrl = "https://gallog.dcinside.com";
 
-
-
 chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
 
 async function login({baseUrl, id, pw}) {
@@ -26,7 +24,7 @@ async function login({baseUrl, id, pw}) {
 async function clean(config) {
   const {id, pw, category = 'post', interval = 500} = config;
 
-  const {driver} = await login({baseUrl, d, pw});
+  const {driver} = await login({baseUrl, id, pw});
   let isContinue = true;
 
   // go to category

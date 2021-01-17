@@ -89,4 +89,4 @@ typings/
 # DynamoDB Local files
 .dynamodb/
 
-user.js
+config.js
