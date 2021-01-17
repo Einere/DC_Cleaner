@@ -81,7 +81,7 @@ const config = {
   category: 'posting',
 };
 
-module.exports = user;
+module.exports = config;
 ```
 
 > 💡  
