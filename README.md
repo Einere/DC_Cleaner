@@ -2,7 +2,6 @@
 
 light DC Cleaner using Node.js.  
 Node.js 기반 초경량 DC 클리너입니다.  
-최대한 비개발자도 따라할 수 있게 작성했습니다만, 실제로 그럴지는 잘 모르겠네요.    
 
 # Notice
 
