@@ -2,7 +2,14 @@
 
 light DC Cleaner using Node.js.  
 Node.js 기반 초경량 DC 클리너입니다.  
-최대한 비개발자도 따라할 수 있게 작성했습니다만, 실제로 그럴지는 잘 모르겠네요.    
+
+# Notice
+
+기본적으로 해당 프로젝트는 개발 지식이 어느 정도 있으신 분들을 위한 것입니다. 하지만, 개발지식이 없는 분들도 충분히 사용하실 수 있다면 좋겠다고 생각하고 있습니다. 
+그러한 분들을 위해 [pkg](https://github.com/vercel/pkg)와 [nexe](https://github.com/nexe/nexe)를 이용하여 exe 파일로 만들어보려고 했으나, 잘 안되서 일단은 보류중입니다.. 😞  
+다소 번거로우시더라도, 안내된 절차를 따라주시길 바라며, 귀찮으시다면 다른 클리너를 찾으시는게 더 좋을 수도 있습니다. 😅  
+시간이 된다면, Electron으로 데스크탑 앱으로 한번 만들어 보도록 하겠습니다.
+
 
 # Requirement
 
@@ -25,7 +32,7 @@ install Node.js and npm appropriately with your OS.
 > 🚨  
 > node.js를 다운로드 후, 실행하지 않으셔도 됩니다. 
 > 이후 모든 명령어는 node 창이 아닌, 터미널 창에서 실행하시기 바랍니다.  
-> Windows 운영체제라면, [Windows Terminal](https://docs.microsoft.com/ko-kr/windows/terminal/get-started) 을 참고해서 **터미널** 실행해주시기 바랍니다.
+> Windows 운영체제라면, [Windows Terminal](https://docs.microsoft.com/ko-kr/windows/terminal/get-started) 을 참고해서 **터미널**을 실행해주시기 바랍니다.
 
 다음 명령어를 실행하여 버전이 제대로 출력되는지 확인하는 것으로, Node.js 및 npm의 설치가 되었는지 확인할 수 있습니다.
 
@@ -71,7 +78,8 @@ $ npm install
 ### Make configuration
 
 make `config.js`, fill content like below in current directory.  
-`config.js` 파일을 현재 폴더 내에 생성한 다음, 밑의 내용을 복사해서 붙여넣고 저장합니다.
+`config.js` 파일을 현재 폴더 내에 생성한 다음, 밑의 내용을 복사해서 붙여넣고 저장합니다.  
+그리고 `your_id` 와 `your_password` 부분에 디씨 인사이드 아이디와 비밀번호를 넣으시면 됩니다. (이 때, 따옴표로 감싸지도록 해주세요.)
 
 ```javascript
 const config = {
@@ -81,7 +89,7 @@ const config = {
   category: 'posting',
 };
 
-module.exports = user;
+module.exports = config;
 ```
 
 > 💡  
