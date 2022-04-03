@@ -52,6 +52,10 @@ async function clean(config) {
           await driver.sleep(interval);
           break;
         }
+        case 'NoSuchSessionError': {
+          await driver.sleep(interval);
+          break;
+        }
         default: {
           await driver.quit();
         }

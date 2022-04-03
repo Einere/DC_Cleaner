@@ -9,7 +9,7 @@
     "author": "Einere",
     "license": "MIT",
     "dependencies": {
-        "chromedriver": "^87.0.0",
+        "chromedriver": "^99.0.0",
         "selenium-webdriver": "^4.0.0-alpha.5"
     }
 }
