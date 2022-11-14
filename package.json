@@ -4,13 +4,14 @@
     "description": "DCinside post cleaner",
     "main": "index.js",
     "scripts": {
-        "start": "node index.js"
+        "start": "node index.js",
+        "update-driver": "npm upgrade chromedriver"
     },
     "author": "Einere",
     "license": "MIT",
     "dependencies": {
         "@fxts/core": "^0.10.0",
-        "chromedriver": "^105.0.0",
+        "chromedriver": "latest",
         "selenium-webdriver": "^4.0.0-alpha.5"
     }
 }
